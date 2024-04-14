@@ -1,0 +1,37 @@
+@use 'base/variables' as v; 
+@use 'base/mixins' as m; 
+
+.pasos {
+    &__wave {
+        margin-top: v.$separacion;
+    }
+
+    &__contenido {
+        background-color: v.$primario;
+    }
+
+    &__principal {
+        @include m.tablet{
+            @include m.grid(3, 5rem);
+        }
+    }
+
+    &__titulo {
+        color: v.$blanco;
+        text-align: center;
+
+        &--descripcion {
+            font-size: 1.8rem;
+            display: block;
+        }
+    }
+    &__imagen {
+        transition-property: transform;
+        transition-duration: 0.3s;
+
+        &:hover{
+            transform: rotate(-4deg) scale(1.2);
+        }
+    }
+
+}
